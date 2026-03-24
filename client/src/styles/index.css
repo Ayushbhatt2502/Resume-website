@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== Design System — Warm Cream Theme ===== */
+:root {
+  --bg: #fffbf5;
+  --bg-2: #fef7ed;
+  --bg-3: #fdf2e2;
+  --border: rgba(120, 80, 30, 0.08);
+  --border-2: rgba(120, 80, 30, 0.12);
+  --primary: #2563eb;
+  --primary-d: #1d4ed8;
+  --primary-glow: rgba(37, 99, 235, 0.10);
+  --secondary: #3b82f6;
+  --accent: #60a5fa;
+  --text: #1a1a2e;
+  --text-2: #3d3d5c;
+  --text-3: #6b7280;
+  --glass: rgba(255, 251, 245, 0.90);
+}
+
+/* ===== Animations ===== */
+@keyframes falling {
+  0% {
+    transform: translateY(-15vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.35;
+  }
+
+  92% {
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ===== Utility Classes ===== */
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(255, 251, 245, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.04);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Global Hover Polish ===== */
+a,
+button {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--text);
+}
